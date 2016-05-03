@@ -671,15 +671,15 @@ class Page(models.Model):
                 "motivation": "sc:painting",
                 "@id": tile_server_for_page(self),
                 "@type": "oa:Annotation",
-                "rendering": [
-                    {"@id": "http://" + host + self.pdf_url, "format": "application/pdf"},
-                    {"@id": "http://" + host + self.jp2_url, "format": "image/jp2"},
-                    {"@id": "http://" + host + self.url, "format": "text/html"}
-                ],
-                "seeAlso": [
-                    {"@id": "http://" + host + self.ocr_url, "format": "text/xml"}
-                ]
             }],
+            "rendering": [
+                {"@id": "http://" + host + self.pdf_url, "format": "application/pdf"},
+                {"@id": "http://" + host + self.jp2_url, "format": "image/jp2"},
+                {"@id": "http://" + host + self.url, "format": "text/html"}
+            ],
+            "seeAlso": [
+                { "@id": "http://" + host + self.ocr_url, "format": "text/xml", "profile": "https://www.loc.gov/standards/alto/"}
+            ],
             "label": str(self.sequence),
             "@id": tile_server_for_page(self),
             "@type": "sc:Canvas"

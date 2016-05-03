@@ -4,7 +4,7 @@
 {% load image_urls %}
 
 {% block extrahead %}
-<link rel="alternate" href="{% url 'openoni_issue_pages_dot_json' title.lccn issue.date_issued issue.edition %}" />
+<link rel="alternate" type="application/json" href="{% url 'openoni_issue_pages_dot_json' title.lccn issue.date_issued issue.edition %}" />
 {% endblock %}
 
 {% block lc_metadata %}
