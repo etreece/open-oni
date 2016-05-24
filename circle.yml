@@ -1,0 +1,14 @@
+machine:
+  environment:
+    APP_URL: http://localhost
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker pull mysql
+    - docker pull makuk66/docker-solr:4.10.4
+
+test:
+  override:
+    - ./docker/dev.sh
